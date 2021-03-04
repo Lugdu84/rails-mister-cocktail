@@ -1,19 +1,23 @@
 <div class="container">
-  <h1>Cocktails !</h1>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
         <div class="card mb-3">
-          <div class="card-body bg-light">
+          <div class="card-body bg-secondary text-center text-white">
             <h5 class="card-title"><%= cocktail.name %></h5>
+            <% cocktail.doses.each do |dose|%>
+              <%= dose.ingredient.name %>
+            <% end  %>
             <h6 class="card-subtitle mb-2 text-muted"></h6>
             <p class="card-text"></p>
           </div>
           <div class="card-footer bg-transparent">
-            <%= link_to 'More info', cocktail_path(cocktail), class: 'text-primary' %>
+            <%= link_to 'Details', cocktail_path(cocktail), class: 'btn btn-primary' %>
+            <%= link_to 'Supprimer', cocktail_path(cocktail), method: :delete,  class: 'btn btn-danger' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+  <%= link_to 'Nouveau cocktail', new_cocktail_path, class: 'btn btn-primary' %>
 </div>
