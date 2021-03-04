@@ -1,23 +1,23 @@
 <div class="container">
-  <div class="row">
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-4">
-        <div class="card mb-3">
-          <div class="card-body bg-secondary text-center text-white">
-            <h5 class="card-title"><%= cocktail.name %></h5>
-            <% cocktail.doses.each do |dose|%>
-              <%= dose.ingredient.name %>
-            <% end  %>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-            <p class="card-text"></p>
-          </div>
-          <div class="card-footer bg-transparent">
-            <%= link_to 'Details', cocktail_path(cocktail), class: 'btn btn-primary' %>
-            <%= link_to 'Supprimer', cocktail_path(cocktail), method: :delete,  class: 'btn btn-danger' %>
-          </div>
-        </div>
+      <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail)  %></h5>
       </div>
     <% end %>
   </div>
-  <%= link_to 'Nouveau cocktail', new_cocktail_path, class: 'btn btn-primary' %>
 </div>
+
+<<!--div class="card-footer bg-transparent">
+  <%#= link_to 'Details', cocktail_path(cocktail), class: 'btn btn-primary' %>
+<%#= link_to 'Supprimer', cocktail_path(cocktail), method: :delete,  class: 'btn btn-danger' %>
+</div>-->
+
+<!--<a href="#" class="float">
+  <i class="fa fa-plus my-float"></i>
+</a>-->
+
+<%=link_to new_cocktail_path, class: 'float' do %>
+  <div class="mt-2"><%= icon('fas', 'plus') %></div>
+<% end %>
