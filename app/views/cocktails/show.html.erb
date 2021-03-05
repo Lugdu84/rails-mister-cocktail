@@ -1,20 +1,25 @@
-<div class="container mt-3 mb-3 text-white bg-info">
+<div class="container mt-3 mb-3 text-white bg-secondary">
   <h1 class="text-center"><%= @cocktail.name %></h1>
-  <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-    url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-
+  <div class="card mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url(
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_path(@cocktail.photo.key, height: 360, crop: :fill) %>
+      <% else %>
+        <%= cl_image_path('mojito-cocktails-814a3f7_xf3omg', height: 360, crop: :fill) %>
+      <% end %>
+      )">
     <% @cocktail.doses.each do |dose| %>
-      <div class="text-center">
+      <div class="card border-white bg-transparent text-center mb-3 mt-1">
         <p><%= dose.ingredient.name %> : <%= dose.description %></p>
         <div>
-          <%= link_to dose_path(dose), method: :delete, class: "" do %>
+          <%= link_to dose_path(dose), method: :delete, class: "text-danger" do %>
             <%= icon('fas', 'trash') %>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
-  <%= link_to 'Ajouter', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+  <%= link_to 'Ajouter un ingrédient', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mb-3' %>
 </div>
 
 

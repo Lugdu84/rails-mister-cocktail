@@ -10,9 +10,12 @@ puts 'Destroy all ingredients...'
 Ingredient.destroy_all
 
 puts 'Creating 3 ingredients...'
-Ingredient.create(name: 'rhum foncé épicé')
-Ingredient.create(name: 'soda au gingembre The Great Jamaican Old Tyme')
-Ingredient.create(name: 'lime')
+Ingredient.create(name: 'rhum')
+Ingredient.create(name: 'feuilles de menthe')
+Ingredient.create(name: 'jus de fruit exotiques')
 Ingredient.create(name: 'glaçons')
+Ingredient.create(name: 'jus de citron')
+Ingredient.create(name: 'sirop de sucre de canne')
+Ingredient.create(name: 'eau gazeuse')
 
 puts 'Ingredients ok !'
