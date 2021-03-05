@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
+
 puts 'Destroy all ingredients...'
 Ingredient.destroy_all
 
@@ -17,5 +18,6 @@ Ingredient.create(name: 'glaçons')
 Ingredient.create(name: 'jus de citron')
 Ingredient.create(name: 'sirop de sucre de canne')
 Ingredient.create(name: 'eau gazeuse')
+
 
 puts 'Ingredients ok !'

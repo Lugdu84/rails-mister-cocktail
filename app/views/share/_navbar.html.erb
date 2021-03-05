@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Liste des cocktails', cocktails_path, class: 'btn btn-outline-primary mr-5 my-2 my-sm-0' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Ajouter un cocktail', new_cocktail_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="get" action="/find">
+      <input class="form-control mr-sm-2 text-color-green" type="text" name="search" value="<%=params[:search]%>" placeholder="Search by ingredient">
+      <button class="btn btn-secondary my-2 my-sm-0 btn-search" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

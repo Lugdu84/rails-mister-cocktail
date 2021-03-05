@@ -7,6 +7,7 @@ class CocktailsController < ApplicationController
 
   def show; end
 
+
   def new
     @cocktail = Cocktail.new
   end
@@ -23,6 +24,14 @@ class CocktailsController < ApplicationController
   def destroy
     @cocktail.destroy
     redirect_to cocktails_path
+  end
+
+  def find
+    search = params[:search]
+    # chercher pour n'afficher qu'une fois un cocktail, si plusieurs ingrédients
+    @cocktails = Cocktail.all.joins(:ingredients)
+                         .where("ingredients.name LIKE '%#{search}%'")
+    render :index, notice: search
   end
 
   private
