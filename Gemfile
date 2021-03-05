@@ -51,6 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'jquery-rails'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'simple_form'
 gem 'sweet-alert2-rails'

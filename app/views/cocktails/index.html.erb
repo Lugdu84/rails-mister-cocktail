@@ -10,7 +10,7 @@
           <% end %>
           )">
         <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail)  %></h5>
-        <%= link_to cocktail_path(cocktail), method: :delete, class: 'btn-delete' do %>
+        <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Etes-vous sûr de vouloir supprimer #{cocktail.name}"}, class: 'btn-delete' do %>
           <%= icon('fas', 'trash') %>
         <% end %>
       </div>
